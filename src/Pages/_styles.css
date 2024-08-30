@@ -65,6 +65,7 @@ body {
   }
 }
 .darkCharacterDetails {
+  background-color: #333;
   color: white;
   margin: 21px 20px;
   border-radius: 20px;

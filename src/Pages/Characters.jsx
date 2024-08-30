@@ -9,6 +9,7 @@ const Characters = () => {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+
   const { isDarkMode } = useContext(ThemeContext);
 
   useEffect(() => {
