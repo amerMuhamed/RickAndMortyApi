@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { fetchCharacters } from "../api/CharactersFetcher";
 import CharacterCard from "../Components/CharacterCard";
 import "./_styles.css";
+import { ThemeContext } from "../Components/ThemeProvider";
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const { isDarkMode } = useContext(ThemeContext);
+
   useEffect(() => {
     const getCharacters = async () => {
       try {
@@ -53,7 +56,7 @@ const Characters = () => {
   }
 
   return (
-    <div className="charactersPage">
+    <div className={isDarkMode ? "darkCharactersPage" : "charactersPage"}>
       <div className="searchBar">
         <input
           type="text"
